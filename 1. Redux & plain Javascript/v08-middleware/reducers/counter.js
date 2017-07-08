@@ -8,7 +8,9 @@ function counter(currentState, action){
     }
     switch (action.type) {
       case 'DECREMENT': // look at Note2.1
+        console.warn(nextState)
         nextState.result = currentState.result - 1;
+        console.warn(nextState)
         return nextState;// Note2.2
       case 'INCREMENT': // look at Note2.1
         nextState.result = currentState.result + 1;

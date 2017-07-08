@@ -14,9 +14,11 @@ var getSum = function(a, b){
 // ASYNC
 var asyncIncrease = function(dispatch, state){
     dispatch({type:"INCREMENT_LOADING"});
+    console.warn('@ asyncIncrease: INCREMENT_LOADING just dispatched')
     _fakeServerApi.increaseCount(state.count.result,
         function(data){
             dispatch({ type: 'INCREMENT' });
         }
     );
+    console.warn('@ asyncIncrease: _fakeServerApi just dispatched')
 }

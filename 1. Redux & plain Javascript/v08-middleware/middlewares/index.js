@@ -28,7 +28,7 @@ const crashReporter = function(store){
         }
     }
 }
-//third middleware
+//third middleware, ref: redux-thunk https://github.com/gaearon/redux-thunk/blob/master/src/index.js
 const thunk = function(store){
     return function(next){
         return function(action){
