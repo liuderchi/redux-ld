@@ -5,6 +5,7 @@ function combineReducer(currentState, action) {
     nextState = {
         count:counter(nextState.count, action),
         sum: sum(nextState.sum, action)
+        // TODO: images
     }
     return nextState;
 }
