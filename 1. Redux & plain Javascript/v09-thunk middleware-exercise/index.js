@@ -19,6 +19,19 @@ function render() {
     }else{
         document.getElementById('imagesStatus').innerHTML = "idle";
     }
+
+    var imgListNode = document.getElementById('imagesList')
+    // clear child node of imagesList
+    imgListNode.innerHTML = ''
+
+    state.images.images.forEach(function(image) {
+      if (image.search('.gif') === -1) return
+
+      var imgNode = document.createElement('img')
+      imgNode.src = image
+      imgListNode.appendChild(imgNode)
+    })
+
 };
 store.subscribe(render);
 // ~end step 1.3
