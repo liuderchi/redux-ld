@@ -13,6 +13,12 @@ function render() {
     }else{
          document.getElementById('status').innerHTML = "loaded";
     }
+
+    if(state.images.loading){
+        document.getElementById('imagesStatus').innerHTML = "loading hot images...";
+    }else{
+        document.getElementById('imagesStatus').innerHTML = "idle";
+    }
 };
 store.subscribe(render);
 // ~end step 1.3

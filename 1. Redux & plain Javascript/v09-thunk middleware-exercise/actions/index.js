@@ -22,11 +22,16 @@ var asyncIncrease = function(dispatch, state){
 }
 
 var getRandomImages = function(dispatch, state){
-  var imgurAPI = "https://api.imgur.com/3/gallery/random/random/1";
-  // NOTE other API: "https://api.imgur.com/3/gallery/hot/viral/0"
+  var imgurAPI = "https://api.imgur.com/3/gallery/hot/viral/0"
+  // var imgurAPI = "https://api.imgur.com/3/gallery/random/random/1";
+
+  dispatch({type:"FETCH_IMG_START"});
   $.getJSON(imgurAPI).done(function(data){
-    console.log('API data: ', data)
     var links = data.data.map(function(data) { return data.link})
-    console.log(links);
+    console.warn(links);
+    dispatch({
+      type: 'FETCH_IMG_DONE',
+      images: links
+    });
   })
 }
