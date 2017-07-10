@@ -5,16 +5,16 @@ var store = Redux.createStore(combineReducer, Redux.applyMiddleware(logger, cras
 // step 1.3
 function render() {
     var state = store.getState()
-    document.getElementById('value').innerHTML = state.count.result;
-    document.getElementById('value2').innerHTML = state.sum;
+    $('#value').text(state.count.result);
+    $('#value2').text(state.sum);
 
     if(state.count.loading){
-        document.getElementById('status').innerHTML = "is loading...";
+        $('#status').text("is loading...");
     }else{
-         document.getElementById('status').innerHTML = "loaded";
+         $('#status').text("loaded");
     }
     // image
-    document.getElementById('imagesStatus').innerHTML = state.images.loading;
+    $('#imagesStatus').text(state.images.loading);
     if(state.images.loading =="loading…"){
          $('#imagesList').text("");
     }
