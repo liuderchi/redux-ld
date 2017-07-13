@@ -35,3 +35,7 @@ var getRandomImages = function(dispatch, state){
     });
   })
 }
+
+var dummyAction = function(dispatch, state) {
+  console.warn('this dummy thunk action did nothing. Nothing flows into reducer');
+}

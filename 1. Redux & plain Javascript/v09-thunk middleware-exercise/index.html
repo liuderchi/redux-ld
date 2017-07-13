@@ -21,11 +21,13 @@
         <button id="decrement">Decrease</button>
         <button id="incrementAsync">Increment async</button>
         <br>CountStatus: <span id="status" style="color:blue"></span>
-        <p>
+        <p></p>
         <input id="a" value="1"/> + <input id="b" value="2"/>
         = <span id="value2">?</span>
         <button id="sum">Sum</button>
-        <p>
+        <p></p>
+        <button id="dummyAction">Dummy Action</button>
+        <p></p>
         <button id="randomImagesButton">Random Images></button>
         <br>Imgur Loader Status: <span id="imagesStatus" style="color:blue"></span>
         <p id="imagesList"></p>
@@ -54,6 +56,10 @@
       document.getElementById('randomImagesButton')
         .addEventListener('click', function () {
           store.dispatch(getRandomImages);
+        })
+      document.getElementById('dummyAction')
+        .addEventListener('click', function () {
+          store.dispatch(dummyAction);
         })
     </script>
     <script src="index.js"></script>
